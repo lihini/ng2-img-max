@@ -1,6 +1,6 @@
 {
     "name": "ng2-img-max",
-    "version": "2.2.4",
+    "version": "2.2.5",
     "description": "Angular module to resize images down to a certain width and height or to reduce the quality to fit a certain maximal filesize - all in the browser.",
     "repository": {
         "type": "git",
@@ -14,7 +14,8 @@
         "transpile": "ngc",
         "package": "rollup -c",
         "minify": "uglifyjs dist/bundles/ng2-img-max.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ng2-img-max.umd.min.js",
-        "build": "npm run transpile && npm run package && npm run minify"
+        "build": "npm run transpile && npm run package && npm run minify",
+        "prepare": "npm run build"
     },
     "author": {
         "name": "Benedikt Berger",
@@ -31,30 +32,31 @@
     ],
     "dependencies": {
         "exifr": "^4.3.4",
-        "ng2-pica": "^1.3.1"
+        "pica": ">=4.0.1"
     },
     "peerDependencies": {
-        "@angular/core": "^6.0.4",
+        "@angular/core": "^11.0.0 || ^12.0.0",
         "core-js": ">=2.4.1",
-        "rxjs": "^6.2.0"
+        "rxjs": "^6.6.2"
     },
     "devDependencies": {
-        "@angular/common": "^6.0.9",
-        "@angular/compiler": "^6.0.9",
-        "@angular/compiler-cli": "^6.0.9",
-        "@angular/core": "^6.0.9",
-        "@angular/platform-browser": "^6.0.9",
-        "@angular/platform-browser-dynamic": "^6.0.9",
-        "@angular/router": "^6.0.9",
+        "@angular/common": "^11.0.0 || ^12.0.0",
+        "@angular/compiler": "^11.0.0 || ^12.0.0",
+        "@angular/compiler-cli": "^11.0.0 || ^12.0.0",
+        "@angular/core": "^11.0.0 || ^12.0.0",
+        "@angular/platform-browser": "^11.0.0 || ^12.0.0",
+        "@angular/platform-browser-dynamic": "^11.0.0 || ^12.0.0",
+        "@angular/router": "^11.0.0 || ^12.0.0",
         "@types/node": ">=7.0.5",
+        "@types/pica": "^5.1.3",
         "core-js": "^2.4.1",
         "reflect-metadata": "^0.1.3",
         "rollup": "^0.41.4",
-        "rxjs": "^6.2.0",
+        "rxjs": "^6.6.7",
         "tslint": "^4.4.2",
-        "typescript": "2.7.2",
+        "typescript": "4.2.4",
         "uglify-js": "^2.7.5",
-        "zone.js": "^0.8.26"
+        "zone.js": "^0.11.4"
     },
     "bugs": {
         "url": "https://github.com/bergben/ng2-img-max/issues"
