@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import * as exifr from 'exifr/dist/mini.legacy.umd';
+import { orientation } from 'exifr'
 
 @Injectable()
 export class ImgExifService {
     public getOrientedImage(image:HTMLImageElement):Promise<HTMLImageElement> {
         return new Promise<HTMLImageElement>(resolve => {
             let img:any;
-			exifr.orientation(image).catch(err => undefined).then(orientation => {
+			orientation(image).catch(err => undefined).then(orientation => {
                 if (orientation != 1) {
                     let canvas:HTMLCanvasElement = document.createElement("canvas"),
                         ctx:CanvasRenderingContext2D = <CanvasRenderingContext2D> canvas.getContext("2d"),
